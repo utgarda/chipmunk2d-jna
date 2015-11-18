@@ -37,4 +37,8 @@ public class CpVect extends Structure {
     }
 
     public double x, y;
+
+    public double len(){
+        return Math.sqrt(x * x + y * y);
+    }
 }

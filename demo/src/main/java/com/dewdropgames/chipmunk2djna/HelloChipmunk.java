@@ -70,4 +70,6 @@ public class HelloChipmunk {
         }
         ballShape.clear();
     }
+
+    //TODO free resources
 }

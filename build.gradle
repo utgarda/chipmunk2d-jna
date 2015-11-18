@@ -27,13 +27,18 @@ project(":library") {
 }
 
 project(":demo") {
+    def gdxVersion = '1.7.1'
     dependencies {
         compile project(":library")
+        compile group: 'com.badlogicgames.gdx', name: 'gdx', version: gdxVersion
+        compile group: 'com.badlogicgames.gdx', name: 'gdx-backend-lwjgl', version: gdxVersion
+        compile group: 'com.badlogicgames.gdx', name: 'gdx-platform', version: gdxVersion, classifier: "natives-desktop"
     }
 
     task runApp(type: JavaExec) {
         classpath = sourceSets.main.runtimeClasspath
 
-        main = 'com.dewdropgames.chipmunk2djna.HelloChipmunk'
+//        main = 'com.dewdropgames.chipmunk2djna.HelloChipmunk'
+        main = 'com.dewdropgames.chipmunk2djna.DesktopLauncher'
     }
 }

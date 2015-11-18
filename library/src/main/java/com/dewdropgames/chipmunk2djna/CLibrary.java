@@ -17,6 +17,11 @@ public interface CLibrary extends Library {
 
     CLibrary CHIPMUNK = (CLibrary) Native.loadLibrary("chipmunk", CLibrary.class, OPTIONS);
 
+    // zero vector
+    CpVect CPVZERO = new CpVect(0, 0);
+
+    CpVect.ByValue CPVZERO_BY_VALUE = new CpVect.ByValue(0, 0);
+
     /**
      * @return new CpSpace structure by reference
      */
@@ -90,4 +95,20 @@ public interface CLibrary extends Library {
 //        cpBodySetPosition(cpBody *body, cpVect position)
 
     void cpBodySetPosition(CpBody body, CpVect.ByValue position);
+
+
+//    https://github.com/slembcke/Chipmunk2D/blob/master/src/cpSpace.c#L686
+//    void
+//    cpSpaceUseSpatialHash(cpSpace *space, cpFloat dim, int count)
+
+    /**
+     * Switch the space to use a spatial hash instead of the bounding box tree.
+     * See the manual: <a href="https://chipmunk-physics.net/release/ChipmunkLatest-Docs/#cpSpace-SpatialHash">
+     *     Enabling and Tuning the Spatial Hash</a>
+     *
+     * @param space space alter
+     * @param dim the size of the hash cells
+     * @param count the suggested minimum number of cells in the hash table
+     */
+    void cpSpaceUseSpatialHash(CpSpace space, double dim, int count);
 }

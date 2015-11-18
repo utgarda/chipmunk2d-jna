@@ -1,5 +1,7 @@
 ### Chipmunk2D-JNA
-A JNA-based wrapper for Chipmunk2D
+A JNA-based wrapper for [Chipmunk2D](https://github.com/slembcke/Chipmunk2D)
+
+https://youtu.be/v5miGupa18o
 
 ### Usage
 
@@ -12,8 +14,9 @@ https://chipmunk-physics.net/release/ChipmunkLatest-Docs/#Intro-HelloChipmunk
 
 ##### Building and using the library
 * `gradle library:publishToMavenLocal`
-* Add the artifact as dependency to your projects:
-    
-    dependencies {
-        compile group: 'com.dewdropgames.chipmunk2d-jna', name: 'chipmunk2d-jna', version: '0.1.0'
-    }
+* Add the artifact as dependency to your projects:    
+```gradle    
+dependencies {
+    compile group: 'com.dewdropgames.chipmunk2d-jna', name: 'chipmunk2d-jna', version: '0.1.0'
+}
+```

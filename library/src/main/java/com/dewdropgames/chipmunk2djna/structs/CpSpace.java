@@ -53,8 +53,6 @@ public class CpSpace extends Structure {
     public static class ByReference extends CpSpace implements Structure.ByReference {
     }
 
-    ;
-
     public int iterations;
 
     public CpVect gravity;
